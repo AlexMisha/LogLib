@@ -18,8 +18,7 @@ Log PROTO :dword
 	Message db 'Hello', 0
 .code
 start:
-
-LOG_DEBUG chr$("eax=%x")
+LOG_DEBUG chr$("%08X[%08X]")
 invoke ExitProcess, 0
 
 end start
