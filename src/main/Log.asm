@@ -13,10 +13,10 @@ includelib \masm32\lib\kernel32.lib
 .data
 
 .code
-Log proc FmtString:dword, Msg:dword
+Log proc FmtString:dword
 local Buffer[256]:byte
 
-invoke wsprintfA, addr Buffer, FmtString, Msg
+invoke wsprintfA, addr Buffer, FmtString
 invoke OutputDebugString, addr Buffer
 
 ret

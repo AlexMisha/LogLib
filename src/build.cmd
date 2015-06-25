@@ -2,6 +2,7 @@
 
 ml /c /coff main\Log.asm
 lib /subsystem:windows /export:Log Log.obj
+move Log.lib staticlib
 
 ml /c /coff test\TestLib.asm
 link /subsystem:windows TestLib.obj
