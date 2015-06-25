@@ -8,7 +8,7 @@ include \masm32\include\user32.inc
 include \masm32\include\kernel32.inc
 include \masm32\macros\macros.asm
 include c:\masm32\projects\LogLib\src\include\Log.inc
-includelib staticlib\Log.lib
+includelib Log.lib
 includelib \masm32\lib\user32.lib
 includelib \masm32\lib\kernel32.lib
 

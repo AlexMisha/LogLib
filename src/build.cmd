@@ -2,7 +2,6 @@
 
 ml /c /coff main\Log.asm
 lib /subsystem:windows /export:Log Log.obj
-move Log.lib staticlib
 
 ml /c /coff test\TestLib.asm
 link /subsystem:windows TestLib.obj
@@ -10,4 +9,5 @@ link /subsystem:windows TestLib.obj
 move TestLib.obj ignore
 move TestLib.exe ignore
 move Log.obj ignore
+move Log.lib staticlib
 pause
