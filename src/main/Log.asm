@@ -1,5 +1,5 @@
 .686P
-.model flat, stdcall
+.model flat, C
 option casemap:none
 ;------------------------------------------------
 
@@ -13,10 +13,10 @@ includelib \masm32\lib\kernel32.lib
 .data
 
 .code
-Log proc FmtString:dword
+Log proc near C parmcount:dword, FmtString:dword, args:vararg
 local Buffer[256]:byte
 
-invoke wsprintfA, addr Buffer, FmtString
+invoke wsprintfA, addr Buffer, FmtString, args
 invoke OutputDebugString, addr Buffer
 
 ret
