@@ -1,6 +1,6 @@
 .code
-LOG_DEBUG macro args:vararg
-invoke Log, args
+LOG_DEBUG macro FmtString, args:vararg
+invoke Log, FmtString, args
 EXITM <eax>
 ENDM
 

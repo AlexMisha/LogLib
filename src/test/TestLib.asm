@@ -12,13 +12,13 @@ includelib Log.lib
 includelib \masm32\lib\user32.lib
 includelib \masm32\lib\kernel32.lib
 
-Log PROTO :dword, :dword, :vararg
+Log PROTO :dword, :vararg
 
 .data
 	Message db 'Hello', 0
 .code
 start:
-LOG_DEBUG 3h, chr$("%s[%08X]"), addr Message, eax
+LOG_DEBUG chr$("%s[%08X]"), offset Message, eax
 invoke ExitProcess, 0
 
 end start
