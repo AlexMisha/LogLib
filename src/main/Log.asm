@@ -18,9 +18,8 @@ includelib \masm32\lib\kernel32.lib
 Log proc FmtString:dword, args:vararg
 local buffer[256]:byte
 
-invoke wsprintfA, addr buffer, FmtString, args
+invoke wsprintfA, addr buffer, FmtString
 invoke OutputDebugString, addr buffer
 
-ret
 Log endp
 end 

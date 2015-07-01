@@ -18,7 +18,7 @@ Log PROTO :dword, :vararg
 	Message db 'Hello', 0
 .code
 start:
-LOG_DEBUG chr$("%s[%08X]"), offset Message, eax
+LOG_DEBUG chr$("%s[%08X]")
 invoke ExitProcess, 0
 
 end start
