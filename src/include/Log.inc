@@ -6,42 +6,41 @@ ERROR_LEVEL equ 1
 Log PROTO near C :dword, :vararg
 
 .code
-LOG_DEBUG macro FmtString, args:vararg
+LOG_DEBUG macro lpResultBuf, FmtString, args:vararg
 if LOG_LEVEL ge DEBUG_LEVEL
 .data
  SymbString db "DEBUG: "
  db FmtString, 0
 .code
-invoke Log, offset SymbString, args
+invoke Log, lpResultBuf, offset SymbString, args
 endif
 ENDM
 
-LOG_INFO macro FmtString, args:vararg
+LOG_INFO macro lpResultBuf, FmtString, args:vararg
 if LOG_LEVEL ge INFO_LEVEL
 .data
  SymbString db "INFO: "
  db FmtString, 0
 .code
-invoke Log, offset SymbString, args
+invoke Log, lpResultBuf, offset SymbString, args
 endif
 ENDM
 
-LOG_WARN macro FmtString, args:vararg
+LOG_WARN macro lpResultBuf, FmtString, args:vararg
 if LOG_LEVEL ge WARN_LEVEL
 .data
- SymbString db "WARN: "
- db FmtString, 0
+ SymbString db "WARN: " FmtString, 0
 .code
-invoke Log, offset SymbString, args
+invoke Log, lpResultBuf, offset SymbString, args
 endif
 ENDM
 
-LOG_ERROR macro FmtString, args:vararg
+LOG_ERROR macro lpResultBuf, FmtString, args:vararg
 if LOG_LEVEL ge ERROR_LEVEL
 .data
  SymbString db "ERROR: "
  db FmtString, 0
 .code
-invoke Log, offset SymbString, args
+invoke Log, lpResultBuf, offset SymbString, args
 endif
 ENDM
