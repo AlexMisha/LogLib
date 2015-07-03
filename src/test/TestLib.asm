@@ -1,5 +1,5 @@
 .686P
-.model flat, C
+.model flat, stdcall
 option casemap:none
 ;------------------------------------------------
 
@@ -12,13 +12,14 @@ includelib Log.lib
 includelib \masm32\lib\user32.lib
 includelib \masm32\lib\kernel32.lib
 
-Log PROTO :dword, :vararg
-
 .data
 	Message db 'Hello', 0
+	Num db '442', 0
+	
 .code
 start:
-LOG_DEBUG chr$("%s[%08X]")
+mov eax, 100h
+LOG_DEBUG "%s[%s]", offset Message, offset Num
 invoke ExitProcess, 0
 
 end start
