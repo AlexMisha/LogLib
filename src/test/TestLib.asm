@@ -14,6 +14,9 @@ includelib \masm32\lib\kernel32.lib
 .code
 start:
 LOG_DEBUG "%s[%08X]", addr Message, 1008h
+LOG_INFO "%s[%08X]", addr Message, 1008h
+LOG_WARN "%s[%08X]", addr Message, 1008h
+LOG_ERROR "%s[%08X]", addr Message, 1008h
 
 invoke ExitProcess, 0
 
