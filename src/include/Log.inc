@@ -1,3 +1,6 @@
+IFNDEF _loginc_
+_loginc_ equ 1
+
 DEBUG_LEVEL equ 4
 INFO_LEVEL equ 3
 WARN_LEVEL equ 2
@@ -52,3 +55,9 @@ invoke wsprintfA, addr buffer4, addr SymbString4, args
 invoke OutputDebugString, addr buffer4
 endif
 ENDM
+
+else 
+echo ------------------------------------------
+echo WARNING Duplicate include file Log.inc
+echo ------------------------------------------
+endif

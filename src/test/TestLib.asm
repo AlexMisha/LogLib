@@ -7,7 +7,6 @@ include \masm32\macros\macros.asm
 include c:\masm32\projects\LogLib\src\include\Log.inc
 includelib \masm32\lib\user32.lib
 includelib \masm32\lib\kernel32.lib
-
 .data
 	Message db 'Hello', 0
 	
