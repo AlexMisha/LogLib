@@ -6,8 +6,6 @@ INFO_LEVEL equ 3
 WARN_LEVEL equ 2
 ERROR_LEVEL equ 1
 
-wsprintfA PROTO near C :dword, :dword, :vararg
-
 LOG_DEBUG macro FmtString, args:vararg
 if LOG_LEVEL ge DEBUG_LEVEL
 .data
