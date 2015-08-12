@@ -3,8 +3,6 @@
 ml /c /coff /D LOG_LEVEL=4 test\TestLib.asm
 link /subsystem:windows /debug TestLib.obj
 
-help
-
 move TestLib.pdb ignore
 move TestLib.ilk ignore
 move TestLib.obj ignore
